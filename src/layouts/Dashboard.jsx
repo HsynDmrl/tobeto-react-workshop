@@ -6,10 +6,12 @@ import { Grid } from "semantic-ui-react";
 import { Routes, Route } from "react-router-dom";
 import CartDetail from "../pages/CartDetail";
 import WelcomePage from "../pages/WelcomePage";
+import { ToastContainer } from "react-toastify";
 
 export default function Dashboard() {
   return (
     <div>
+      <ToastContainer position="top-right"/>
       <Grid>
         <Grid.Row>
           <Grid.Column width={4}>
@@ -17,8 +19,8 @@ export default function Dashboard() {
           </Grid.Column>
           <Grid.Column width={12}>
             <Routes>
-              <Route path="/" element={<WelcomePage />} />
-              <Route path="/cars" element={<CarList />} />
+              <Route exact path="/" element={<WelcomePage />} />
+              <Route exact path="/cars" element={<CarList />} />
               <Route path="/cars/:id" element={<CarDetail />} />
               <Route path="/cart" element={<CartDetail />} />
             </Routes>

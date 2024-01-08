@@ -1,15 +1,28 @@
 import React, { useState, useEffect } from "react";
-import { Icon, Menu, Table } from "semantic-ui-react";
+import { Button, Icon, Label, Menu, Table } from "semantic-ui-react";
 import CarService from "../services/carService";
+import { useDispatch } from "react-redux";
+import { addToCart } from "../store/actions/cartActions";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 export default function CarList() {
+  
+  const dispatch = useDispatch();
+
   const [cars, setCars] = useState([]);
 
-  useEffect(()=>{
-    let carService = new CarService()
-    carService.getCars().then(response=>setCars(response.data))
-  },[])
+  useEffect(() => {
+    let carService = new CarService();
+    carService
+      .getCars()
+      .then((result) => setCars(result.data));
+  }, []);
+
+  const handleAddToCart = (car) => {
+    dispatch(addToCart(car));
+    toast.success(`${car.carName} sepete eklendi!`)
+  };
 
   return (
     <div>
@@ -22,6 +35,7 @@ export default function CarList() {
             <Table.HeaderCell>Model Yılı</Table.HeaderCell>
             <Table.HeaderCell>Model</Table.HeaderCell>
             <Table.HeaderCell>Rengi</Table.HeaderCell>
+            <Table.HeaderCell>Sepet</Table.HeaderCell>
           </Table.Row>
         </Table.Header>
 
@@ -35,6 +49,9 @@ export default function CarList() {
               <Table.Cell>{car.year}</Table.Cell> 
               <Table.Cell>{car.modelName}</Table.Cell> 
               <Table.Cell>{car.colorName}</Table.Cell> 
+              <Table.Cell>
+                <Button onClick={()=>handleAddToCart(car)}>Sepete ekle</Button>
+              </Table.Cell> 
             </Table.Row>
           ))}
         </Table.Body>
