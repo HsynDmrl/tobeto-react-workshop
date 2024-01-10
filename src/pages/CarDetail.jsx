@@ -24,7 +24,7 @@ export default function CarDetail() {
               src="/images/avatar/large/steve.jpg"
             />
             <Card.Header>{car.id}</Card.Header>
-            <Card.Meta>{car.modelName}</Card.Meta>
+            <Card.Meta>{car.plate}</Card.Meta>
             <Card.Description>
               Steve wants to add you to the group <strong>best friends</strong>
             </Card.Description>

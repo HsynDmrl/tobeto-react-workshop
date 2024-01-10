@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Button, Icon, Label, Menu, Table } from "semantic-ui-react";
+import { Button, Icon, Menu, Table } from "semantic-ui-react";
 import CarService from "../services/carService";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../store/actions/cartActions";
@@ -18,11 +18,12 @@ export default function CarList() {
       .getCars()
       .then((result) => setCars(result.data));
   }, []);
+  
+const handleAddToCart = (car) => {
+  dispatch(addToCart({ ...car, cartItemId: car.id })); // cartItemId eklendi
+  toast.success(`${car.plate} sepete eklendi!`)
+};
 
-  const handleAddToCart = (car) => {
-    dispatch(addToCart(car));
-    toast.success(`${car.carName} sepete eklendi!`)
-  };
 
   return (
     <div>

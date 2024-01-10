@@ -12,16 +12,16 @@ export default function CartSummary() {
         <div>
             <Dropdown item text="Sepetiniz">
               <Dropdown.Menu>
-                {
-                  cartItems.map((cartItem)=>(
-                    <Dropdown.Item>
-                      {cartItem.product.plate}
-                      <Label>
-                        {cartItem.quantity}
-                      </Label>
-                    </Dropdown.Item>
-                  ))
-                }
+              {
+                cartItems.map((cartItem) => (
+                  <Dropdown.Item key={cartItem.car.id}>
+                    {cartItem.car.plate}
+                    <Label>
+                      {cartItem.quantity}
+                    </Label>
+                  </Dropdown.Item>
+                ))
+              }
                 <Dropdown.Divider/>
                 <Dropdown.Item as={NavLink} to="/cart">Sepete git</Dropdown.Item>
               </Dropdown.Menu>

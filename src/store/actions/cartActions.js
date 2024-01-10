@@ -2,16 +2,16 @@ export const ADD_TO_CART = "ADD_TO_CART"
 export const REMOVE_FROM_CART = "REMOVE_FROM_CART"
 
 
-export function addToCart(product){
+export function addToCart(car){
     return {
         type : ADD_TO_CART,
-        payload: product
+        payload: car
     }
 }
 
-export function removeFromCart(product){
+export function removeFromCart(car){
     return {
         type : REMOVE_FROM_CART,
-        payload: product
+        payload: car
     }
 }
