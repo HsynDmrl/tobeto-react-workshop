@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/tobeto-react-workshop/static/css/main.1387c82f.css",
-    "main.js": "/tobeto-react-workshop/static/js/main.29496757.js",
+    "main.js": "/tobeto-react-workshop/static/js/main.73ac606c.js",
     "static/js/787.d3036b52.chunk.js": "/tobeto-react-workshop/static/js/787.d3036b52.chunk.js",
     "static/media/brand-icons.svg": "/tobeto-react-workshop/static/media/brand-icons.6729d29753e000c17489.svg",
     "static/media/icons.svg": "/tobeto-react-workshop/static/media/icons.62d9dae4e0040e81c980.svg",
@@ -22,11 +22,11 @@
     "static/media/redux.cjs": "/tobeto-react-workshop/static/media/redux.7edfc461ab353f1712ab.cjs",
     "index.html": "/tobeto-react-workshop/index.html",
     "main.1387c82f.css.map": "/tobeto-react-workshop/static/css/main.1387c82f.css.map",
-    "main.29496757.js.map": "/tobeto-react-workshop/static/js/main.29496757.js.map",
+    "main.73ac606c.js.map": "/tobeto-react-workshop/static/js/main.73ac606c.js.map",
     "787.d3036b52.chunk.js.map": "/tobeto-react-workshop/static/js/787.d3036b52.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1387c82f.css",
-    "static/js/main.29496757.js"
+    "static/js/main.73ac606c.js"
   ]
 }
